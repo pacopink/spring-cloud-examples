@@ -1,5 +1,6 @@
 package com.neo;
 
+import javafx.application.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,7 @@ public class ProducerApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }

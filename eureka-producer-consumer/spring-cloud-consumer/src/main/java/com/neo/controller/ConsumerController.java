@@ -17,4 +17,9 @@ public class ConsumerController {
         return HelloRemote.hello(name);
     }
 
+
+    @RequestMapping("/info")
+    public String info() {
+        return "OK";
+    }
 }
