@@ -1,5 +1,7 @@
 package com.neo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,7 @@ import java.util.TreeMap;
 
 @RestController
 public class HelloController {
+    private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     @Autowired
     private NamedParameterJdbcTemplate postgresJdbcTemplate;
@@ -28,6 +31,7 @@ public class HelloController {
 
     @RequestMapping("/test")
     public List<String>  test() {
+        logger.info("/test called");
         return postgresJdbcTemplate.queryForList("select name from test", new TreeMap<String, String>(), String.class);
     }
 
